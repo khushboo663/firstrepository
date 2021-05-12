@@ -2,7 +2,8 @@
 <html>
 <head>
     <script src="js/includehtml.js"></script> 
-    
+    <script src="js/onload.js">  </script>
+
         <div w3-include-html="snippets/content.html"></div> 
         <style>
             .vl {
@@ -12,44 +13,10 @@
             </style>
     
 </head>
-
     <body>
-       
-        <div class="tm-header" >
+       <div class="tm-header" >
             <div class="container-fluid">
                 <div class="tm-header-inner">
-                    <a href="index.html" class="navbar-brand tm-site-name">Simply Blogging</a>
-                    <!--  <a href="home.html" class="navbar-brand tm-site-name" style="font-size: 20px;">Places to Travel</a>
-                
-                     <br/>    -->
-
-                    <!-- navbar -->
-                    <nav class="navbar tm-main-nav">
-                        
-                        <button class="navbar-toggler hidden-md-up" type="button" data-toggle="collapse" data-target="#tmNavbar">
-                            &#9776;
-                        </button>
-                        
-                        <div class="collapse navbar-toggleable-sm" id="tmNavbar">
-                            <ul class="nav navbar-nav">
-                                <li class="nav-item">
-                                    <a href="index.html" class="nav-link">Home</a>
-                                </li>
-                                <li class="nav-item active">
-                                    <a href="addblog.html" class="nav-link">Add Blog</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="aboutus.html" class="nav-link">About Us</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="contactus.html" class="nav-link">Contact Us</a>
-                                </li>
-                            </ul>                        
-                        </div>
-                      
-                        
-                        
-                    </nav>  
 
                 </div>                                  
             </div>            
@@ -60,63 +27,10 @@
             <div>
                 <div class="row" style="padding-top: 0px;padding-bottom: 0px;">
 
-                  <!--include previousblogs.html file here
-                  <div w3-include-html="snippets/previousblogs.html"></div> -->
+                 <!-- include previousblogs.html file here -->
+                  <div w3-include-html="snippets/previousblogs.html"></div>
 
-                  <div class="col-xs-12 col-sm-12 col-md-8 col-lg-9 col-xl-9">
-                       
-                    <div class="row tm-margin-t-big" >
-                        <ul id="presentblogs">
-                            <li>
-                            <img src="img/forest.png" alt="Image" class="tm-margin-b-30 img-fluid">
-                                <h4 class="tm-margin-b-20 tm-gold-text">Forest</h4>
-                                <p class="tm-margin-b-20">A forest is an area of land dominated by trees. here are four different types of forests found around the world: tropical forests,temperate forests...</p>
-                                <a href="#" class="tm-btn text-uppercase">Read More</a> 
-                                <br/>
-                                <hr class="tm-margin-t-small"> 
-                                <br/>   
-                            </li>
-                            <li>
-                        
-                                <img src="img/seashore.jpg" alt="Image" class="tm-margin-b-30 img-fluid">
-                                <h4 class="tm-margin-b-20 tm-gold-text">Seashore</h4>
-                                <p class="tm-margin-b-20">The seashore is the land that borders an ocean or sea. The seashore includes the area covered by water during high tide... </p>   
-                                <a href="#" class="tm-btn text-uppercase">Read More</a>  
-                                <br/>
-                                <hr class="tm-margin-t-small"> 
-                                <br/> 
-                            
-                    </li>
-                
-                    <li>
-                       
-                                <img src="img/mountains.jpg" alt="Image" class="tm-margin-b-30 img-fluid">
-                                <h4 class="tm-margin-b-20 tm-gold-text">Mountains</h4>
-                                <p class="tm-margin-b-20">Mountain, landform that rises prominently above its surroundings, generally exhibiting steep slopes, a relatively confined ...</p>
-                                <a href="#" class="tm-btn text-uppercase">Read More</a>
-                                <br/>
-                                <hr class="tm-margin-t-small"> 
-                                <br/>     
-                          
-                    </li>
-                
-                    <li>
-                      
-                                <img src="img/snowfall.jpg" alt="Image" class="tm-margin-b-30 img-fluid">
-                                <h4 class="tm-margin-b-20 tm-gold-text">Hills(Snowfall)</h4>
-                                <p class="tm-margin-b-20">The snowfall in an area or country is the amount of snow that falls there during a particular period. Snowfall occurs mostly in winter...</p>
-                                <a href="#" class="tm-btn text-uppercase">Read More</a>   
-                                <br/>
-                                <hr class="tm-margin-t-small"> 
-                                <br/>  
-                               
-                    </li>
-                    </ul>
-                    </div>
-                   
-                </div>
-                    
-                    <aside class="col-xs-12 col-sm-12 col-md-4 col-lg-3 col-xl-3 tm-aside-r vl">
+                     <aside class="col-xs-12 col-sm-12 col-md-4 col-lg-3 col-xl-3 tm-aside-r vl">
                         
                     <br/>
                     <br/>
@@ -139,7 +53,7 @@
                             </nav>
                             <hr class="tm-margin-t-small">  
 
-                            <script src="js/onload.js"></script>   
+                            <!---must include onload.js here-->
 
                              <script type="text/javascript">
                             var imageurl = "";
@@ -162,8 +76,10 @@
 
                              
                                 function  addblog() {
-     
-                               // alert("localStorage.length/3 + 1 = " + locallength);
+    
+                               
+                                // alert("localStorage.length/3 + 1 = " + locallength);
+
                                     var title = document.getElementById ("titletxt").value;
                                     var blog = document.getElementById ("blogtxt").value;
                                    
@@ -195,8 +111,10 @@
                                         localStorage.setItem("titletext" + locallength, title);
                                         
                                         var para = document.createElement("P");
-                                        var blogcont = blog.slice(0,150)+"...";
-                                        localStorage.setItem("contenttext" + locallength, blogcont);
+                                       // var blogcont = blog.slice(0,150)+"...";
+                                       localStorage.setItem("contenttext" + locallength, blog);
+
+                                       // localStorage.setItem("contentfulltext" + locallength, blog);
                                        
                                         document.getElementById ("titletxt").value = "";
                                         document.getElementById ("blogtxt").value = "";
@@ -229,6 +147,20 @@
         <script src="https://www.atlasestateagents.co.uk/javascript/tether.min.js"></script> <!-- Tether for Bootstrap, http://stackoverflow.com/questions/34567939/how-to-fix-the-error-error-bootstrap-tooltips-require-tether-http-github-h --> 
         <script src="js/bootstrap.min.js"></script>                 <!-- Bootstrap (http://v4-alpha.getbootstrap.com/) -->
         <script>includeHTML();</script>
-        <script type="text/javascript">onpald();</script>
+        <script src="js/loadaddedblogs.js"></script>
+        <script type="text/javascript">
+        setTimeout(function()
+        { 
+         if (document.readyState == "complete")
+         {
+         loadaddedblogs();
+        var pathname  = window.location.pathname;
+        var listitemidentity = document.getElementById(pathname);
+        listitemidentity.className = "nav-item active";
+              listitemidentity.setAttribute("class","nav-item active");
+               
+         }
+        }, 1000);
+    </script>
 </body>
 </html>
